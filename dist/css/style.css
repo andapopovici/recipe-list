@@ -1,0 +1,58 @@
+body {
+	background-color: #FFCC99;
+	font-family: 'Raleway', sans-serif;
+}
+
+#website-header {
+	font-family: 'Bitter', serif;
+	font-size: 40px;
+	font-weight: bold;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+#page-content {
+	margin-left: 250px;
+}
+
+.purple {
+	color: #5f4e9a;
+}
+
+ul.sidenav li {
+    color: #FFF;
+	font-size: 18px;
+}
+
+ul.sidenav li > a {
+    padding-left: 15px;
+    color: #FFF;
+}
+
+ul.sidenav li > a > i {
+    padding-right: 8px;
+}
+
+ul.sidenav li > a:hover {
+    text-decoration: none;
+    background: #5f4e9a;
+    cursor: pointer;
+}
+
+ul.sidenav li > a:focus {
+    text-decoration: none;
+}
+
+li.sidenav-selected {
+    background: #5f4e9a;
+
+}
+
+#sidenav-wrapper {
+	width:220px;
+	background: #2b3643;
+	position: fixed;
+    height: 100%;
+    z-index: 999;
+	margin-top: 10px;
+}
