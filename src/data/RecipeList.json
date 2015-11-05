@@ -1,0 +1,12 @@
+{
+	"name": "Amazing Cakes",
+	"type": "Baking",
+	"description": "Steven would like some amazing cakes",
+	"image" : "http://dreamatico.com/data_images/cake/cake-2.jpg"
+	"ingredients": {
+		"ingredient": [
+			{ "name": "Chocolate", "quantity": "2 big bars" },
+			{ "name": "Sprinkles", "quantity": "lots" }
+		]
+	}
+}
