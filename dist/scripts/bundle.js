@@ -22977,12 +22977,14 @@ var MainPage = React.createClass({displayName: "MainPage",
 		
 		return (
 			React.createElement("div", null, 
-				React.createElement(MainTitle, null), 
 				React.createElement("div", {id: "sidenav-wrapper"}, 
-					React.createElement(SideNav, {className: "sidenav", itemType: "righticon", itemHeight: "32px", navigation: nav, path: "#"})
+					React.createElement(SideNav, {className: "sidenav", itemType: "righticon", navigation: nav, path: "#"})
 				), 
-				React.createElement("div", {id: "page-content"}, 
-					React.createElement(PageContent, null)
+				React.createElement("div", {id: "right-page-content"}, 
+					React.createElement(MainTitle, null), 
+					React.createElement("div", {id: "page-content"}, 
+						React.createElement(PageContent, null)
+					)
 				)
 			)
 		);
@@ -23028,7 +23030,7 @@ var RecipeList = React.createClass({displayName: "RecipeList",
 			React.createElement("div", null, 
 			
 				this.state.nodes.map(function(recipe) {
-					return React.createElement("h1", null, recipe.name);
+					return (React.createElement("div", null, React.createElement("h1", null, recipe.name), React.createElement("img", {src: recipe.image, width: "220"})));
 				})
 			
 			)

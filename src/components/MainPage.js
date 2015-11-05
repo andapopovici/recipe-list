@@ -42,12 +42,14 @@ var MainPage = React.createClass({
 		
 		return (
 			<div>
-				<MainTitle />
 				<div id="sidenav-wrapper">
-					<SideNav className={"sidenav"} itemType="righticon" itemHeight="32px" navigation={nav} path="#"></SideNav>
+					<SideNav className={"sidenav"} itemType="righticon" navigation={nav} path="#"></SideNav>
 				</div>
-				<div id="page-content">
-					<PageContent />
+				<div id="right-page-content">
+					<MainTitle />
+					<div id="page-content">
+						<PageContent />
+					</div>
 				</div>
 			</div>
 		);

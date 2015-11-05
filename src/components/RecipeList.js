@@ -21,7 +21,7 @@ var RecipeList = React.createClass({
 			<div>
 			{
 				this.state.nodes.map(function(recipe) {
-					return <h1>{recipe.name}</h1>;
+					return (<div><h1>{recipe.name}</h1><img src={recipe.image} width="220" /></div>);
 				})
 			}
 			</div>
