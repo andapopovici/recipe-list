@@ -3,6 +3,7 @@
 var React = require('react');
 var SideNav = require('react-sidenav');
 var MainTitle = require('./MainTitle');
+var AddRecipe = require('./AddRecipe');
 var RecipeList = require('./RecipeList');
 
 var nav = [
@@ -12,14 +13,38 @@ var nav = [
     ];
 
 var MainPage = React.createClass({
+
+	getInitialState: function() {
+		return {
+			route: window.location.hash.substr(1)
+		};
+	},
+	componentDidMount: function() {
+		var that = this;
+		window.addEventListener('hashchange', function() {
+			that.setState({
+				route: window.location.hash.substr(1)
+			});
+		});
+	},
 	render: function() {
 		var PageContent;
-		PageContent = RecipeList;
+		switch (this.state.route) {
+			case '/add':
+				PageContent = AddRecipe;
+				break;
+			case '/recipes':
+				PageContent = RecipeList;
+				break;
+			default:
+				PageContent = RecipeList;
+		}
+		
 		return (
 			<div>
 				<MainTitle />
 				<div id="sidenav-wrapper">
-					<SideNav className={"sidenav"} itemType="righticon" itemHeight="32px" navigation={nav}></SideNav>
+					<SideNav className={"sidenav"} itemType="righticon" itemHeight="32px" navigation={nav} path="#"></SideNav>
 				</div>
 				<div id="page-content">
 					<PageContent />
