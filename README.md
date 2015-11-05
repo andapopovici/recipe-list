@@ -1,4 +1,4 @@
-# Recipe book exercise app
+# Recipe book exercise Application
 Done using (https://github.com/coryhouse/react-flux-starter-kit) to improve my React & flux understanding.
 
 ##To get started:  
