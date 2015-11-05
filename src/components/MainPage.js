@@ -5,6 +5,7 @@ var SideNav = require('react-sidenav');
 var MainTitle = require('./MainTitle');
 var AddRecipe = require('./AddRecipe');
 var RecipeList = require('./RecipeList');
+var RecipeDetail = require('./RecipeDetail');
 
 var nav = [
         {key: 'recipes', title: 'All recipes', 'iconClassName': 'fa fa-cutlery'},
@@ -35,6 +36,9 @@ var MainPage = React.createClass({
 				break;
 			case '/recipes':
 				PageContent = RecipeList;
+				break;
+			case '/recipes/:id':
+				PageContent = RecipeDetail;
 				break;
 			default:
 				PageContent = RecipeList;

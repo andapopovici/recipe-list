@@ -22918,7 +22918,7 @@ var RecipeActions = {
 
 module.exports = RecipeActions;
 
-},{"../dispatcher/AppDispatcher":186}],182:[function(require,module,exports){
+},{"../dispatcher/AppDispatcher":187}],182:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -22940,6 +22940,7 @@ var SideNav = require('react-sidenav');
 var MainTitle = require('./MainTitle');
 var AddRecipe = require('./AddRecipe');
 var RecipeList = require('./RecipeList');
+var RecipeDetail = require('./RecipeDetail');
 
 var nav = [
         {key: 'recipes', title: 'All recipes', 'iconClassName': 'fa fa-cutlery'},
@@ -22971,6 +22972,9 @@ var MainPage = React.createClass({displayName: "MainPage",
 			case '/recipes':
 				PageContent = RecipeList;
 				break;
+			case '/recipes/:id':
+				PageContent = RecipeDetail;
+				break;
 			default:
 				PageContent = RecipeList;
 		}
@@ -22992,7 +22996,7 @@ var MainPage = React.createClass({displayName: "MainPage",
 });
 
 module.exports = MainPage;
-},{"./AddRecipe":182,"./MainTitle":184,"./RecipeList":185,"react":180,"react-sidenav":7}],184:[function(require,module,exports){
+},{"./AddRecipe":182,"./MainTitle":184,"./RecipeDetail":185,"./RecipeList":186,"react":180,"react-sidenav":7}],184:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -23007,6 +23011,23 @@ var MainTitle = React.createClass({displayName: "MainTitle",
 
 module.exports = MainTitle;
 },{"react":180}],185:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var RecipeStore = require('../stores/RecipeStore');
+
+var RecipeDetail = React.createClass({displayName: "RecipeDetail",
+	render: function(){
+		return (
+			React.createElement("div", null, 
+			"kklkjkjkm"
+			)
+		);
+	}
+});
+
+module.exports = RecipeDetail;
+},{"../stores/RecipeStore":189,"react":180}],186:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -23030,7 +23051,12 @@ var RecipeList = React.createClass({displayName: "RecipeList",
 			React.createElement("div", null, 
 			
 				this.state.nodes.map(function(recipe) {
-					return (React.createElement("div", null, React.createElement("h1", null, recipe.name), React.createElement("img", {src: recipe.image, width: "220"})));
+					return (React.createElement("div", {key: recipe.id}, 
+								React.createElement("h3", {className: "title"}, 
+									React.createElement("a", {href: "/#/recipes/" + recipe.id}, recipe.name)
+								), 
+								React.createElement("img", {src: recipe.image, width: "220"})
+							));
 				})
 			
 			)
@@ -23042,7 +23068,7 @@ var RecipeList = React.createClass({displayName: "RecipeList",
 });
 
 module.exports = RecipeList;
-},{"../stores/RecipeStore":188,"react":180}],186:[function(require,module,exports){
+},{"../stores/RecipeStore":189,"react":180}],187:[function(require,module,exports){
 'use strict';
 
 var Dispatcher = require('flux').Dispatcher;
@@ -23064,7 +23090,7 @@ AppDispatcher.handleServerAction = function(action) {
 
 module.exports = AppDispatcher;
 
-},{"flux":3}],187:[function(require,module,exports){
+},{"flux":3}],188:[function(require,module,exports){
 var React = require('react');
 var MainPage = require('./components/MainPage');
 var RecipeWebAPIUtils = require('./utils/RecipeWebAPIUtils');
@@ -23072,7 +23098,10 @@ var RecipeWebAPIUtils = require('./utils/RecipeWebAPIUtils');
 RecipeWebAPIUtils.getAllRecipes();
 
 React.render(React.createElement(MainPage, null), document.getElementById('app'));
-},{"./components/MainPage":183,"./utils/RecipeWebAPIUtils":189,"react":180}],188:[function(require,module,exports){
+
+console.log("^^^^^^THIS IS NOT AN ERROR^^^^^^");
+
+},{"./components/MainPage":183,"./utils/RecipeWebAPIUtils":190,"react":180}],189:[function(require,module,exports){
 'use strict';
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
@@ -23120,7 +23149,7 @@ RecipeStore.dispatchToken = AppDispatcher.register(function(payload) {
 
 module.exports = RecipeStore;
 
-},{"../dispatcher/AppDispatcher":186,"events":1,"object-assign":6}],189:[function(require,module,exports){
+},{"../dispatcher/AppDispatcher":187,"events":1,"object-assign":6}],190:[function(require,module,exports){
 'use strict';
 
 var RecipeActionsCreator = require('../actions/RecipeActionsCreator');
@@ -23141,4 +23170,4 @@ var RecipeAPI = {
 
 module.exports = RecipeAPI;
 
-},{"../actions/RecipeActionsCreator":181}]},{},[187]);
+},{"../actions/RecipeActionsCreator":181}]},{},[188]);

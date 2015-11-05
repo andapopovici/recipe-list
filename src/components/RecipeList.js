@@ -21,7 +21,12 @@ var RecipeList = React.createClass({
 			<div>
 			{
 				this.state.nodes.map(function(recipe) {
-					return (<div><h1>{recipe.name}</h1><img src={recipe.image} width="220" /></div>);
+					return (<div key={recipe.id}>
+								<h3 className="title">
+									<a href={"/#/recipes/" + recipe.id}>{recipe.name}</a>
+								</h3>
+								<img src={recipe.image} width="220" />
+							</div>);
 				})
 			}
 			</div>

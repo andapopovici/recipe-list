@@ -8,6 +8,10 @@ body {
 	font-weight: bold;
 }
 
+.title {
+	font-family: 'Bitter', serif;
+}
+
 .purple {
 	color: #5f4e9a;
 }
