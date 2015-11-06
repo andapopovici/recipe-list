@@ -3,9 +3,6 @@
 var React = require('react');
 var SideNav = require('react-sidenav');
 var MainTitle = require('./MainTitle');
-var AddRecipe = require('./AddRecipe');
-var RecipeList = require('./RecipeList');
-var RecipeDetail = require('./RecipeDetail');
 var RouteHandler = require('react-router').RouteHandler;
 
 var nav = [

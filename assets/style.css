@@ -16,6 +16,32 @@ body {
 	color: #5f4e9a;
 }
 
+.recipe-detail-body {
+	margin-left: 20px;
+	font-size: 16px;
+	width: 60%;
+	float: left;
+}
+
+.ingredients-list{
+	margin-left: 10px;
+	font-size: 16px;
+}
+.ingredients-title {
+	font-size: 20px;
+}
+
+.ingredient {
+	margin-left: 20px;
+}
+
+.recipe-detail-img {
+	float: right;
+	width: 30%;
+	margin-right: 5%;
+	padding: 5px;
+}
+
 ul.sidenav li {
     color: #FFF;
 	font-size: 18px;

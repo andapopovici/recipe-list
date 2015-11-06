@@ -3,23 +3,29 @@
 		"id" : 1,
 		"name": "Chocolate cake",
 		"type": "Baking",
-		"description": "Very nice",
+		"description": "Preheat the oven to 180C/gas mark 4.Beat together the eggs, flour, caster sugar, butter and baking powder until smooth in a large mixing bowl.Put the cocoa in separate mixing bowl, and add the water a little at a time to make a stiff paste. Add to the cake mixture.Turn into the prepared tins, level the top and bake in the preheated oven for about 20-25 mins, or until shrinking away from the sides of the tin and springy to the touch.Leave to cool in the tin, then turn on to a wire rack to become completely cold before icing.To make the icing: measure the cream and chocolate into a bowl and carefully melt over a pan of hot water over a low heat, or gently in the microwave for 1 min (600w microwave). Stir until melted, then set aside to cool a little and to thicken up.To ice the cake: spread the apricot jam on the top of each cake. Spread half of the ganache icing on the top of the jam on one of the cakes, then lay the other cake on top, sandwiching them together.Use the remaining ganache icing to ice the top of the cake in a swirl pattern. Dust with icing sugar to serve.",
 		"image" : "http://dreamatico.com/data_images/cake/cake-2.jpg",
 		"ingredients": [
-			{ "name": "Chocolate", "quantity": "2 big bars" },
-			{ "name": "Butter", "quantity": "lots" }
+			{ "name": "eggs", "quantity": "3" },
+			{ "name": "self-raising flour", "quantity": "175g" },
+			{ "name": "butter", "quantity": "175g" },
+			{ "name": "baking powder", "quantity": "1 tbsp" },
+			{ "name": "cocoa powder", "quantity": "40g" },
+			{ "name": "icing sugar", "quantity": "a little" }
 		]
 	},
 	{
 		"id" : 2,
 		"name": "Carrot cake",
 		"type": "Baking",
-		"description": "Healthy & sweet!",
+		"description": "Preheat the oven to 180C/Gas 4/fan 160C. Oil and line the base and sides of an 18cm square cake tin with baking parchment. The easiest way to do this is to cut two long strips the width of the tin and put each strip crossways, covering the base and sides of the tin, with a double layer in the base. Tip the sugar into a large mixing bowl, pour in the oil and add the eggs. Lightly mix with a wooden spoon. Stir in the grated carrots, raisins and orange rind. Mix the flour, bicarbonate of soda and spices, then sift into the bowl. Lightly mix all the ingredients – when everything is evenly amalgamated stop mixing. The mixture will be fairly soft and almost runny. Pour the mixture into the prepared tin and bake for 40- 45 minutes, until it feels firm and springy when you press it in the centre. Cool in the tin for 5 minutes, then turn it out, peel off the paper and cool on a wire rack. (You can freeze the cake at this point.) Beat together the frosting ingredients in a small bowl until smooth – you want the icing about as runny as single cream. Set the cake on a serving plate and boldly drizzle the icing back and forth in diagonal lines over the top, letting it drip down the sides.",
 		"image" : "http://theladykillers.typepad.com/.a/6a00d83451f4a069e20167692c7d03970b-pi",
 		"ingredients": [
-			{ "name": "Eggs", "quantity": "6" },
-			{ "name": "Carrots", "quantity": "a bunch" },
-			{ "name": "Flour", "quantity": "a bucket" }
+			{ "name": "eggs", "quantity": "3" },
+			{ "name": "sunflower oil", "quantity": "175ml" },
+			{ "name": "carrots", "quantity": "140g" },
+			{ "name": "raisins", "quantity": "100g" },
+			{ "name": "self-raising flour", "quantity": "175g" }
 		]
 	}
 ]
