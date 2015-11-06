@@ -7,7 +7,7 @@ var RecipeDetail = React.createClass({
 	render: function(){
 		return (
 			<div>
-			kklkjkjkm
+			detail
 			</div>
 		);
 	}

@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react');
+var Link = require('react-router').Link;
 var RecipeStore = require('../stores/RecipeStore');
 
 function getAllRecipeData() {
@@ -23,7 +24,7 @@ var RecipeList = React.createClass({
 				this.state.nodes.map(function(recipe) {
 					return (<div key={recipe.id}>
 								<h3 className="title">
-									<a href={"/#/recipes/" + recipe.id}>{recipe.name}</a>
+									<Link to="recipeDetail" params={{id: recipe.id}}>{recipe.name}</Link>
 								</h3>
 								<img src={recipe.image} width="220" />
 							</div>);

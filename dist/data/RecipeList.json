@@ -1,0 +1,25 @@
+[
+	{
+		"id" : 1,
+		"name": "Chocolate cake",
+		"type": "Baking",
+		"description": "Very nice",
+		"image" : "http://dreamatico.com/data_images/cake/cake-2.jpg",
+		"ingredients": [
+			{ "name": "Chocolate", "quantity": "2 big bars" },
+			{ "name": "Butter", "quantity": "lots" }
+		]
+	},
+	{
+		"id" : 2,
+		"name": "Carrot cake",
+		"type": "Baking",
+		"description": "Healthy & sweet!",
+		"image" : "http://theladykillers.typepad.com/.a/6a00d83451f4a069e20167692c7d03970b-pi",
+		"ingredients": [
+			{ "name": "Eggs", "quantity": "6" },
+			{ "name": "Carrots", "quantity": "a bunch" },
+			{ "name": "Flour", "quantity": "a bucket" }
+		]
+	}
+]

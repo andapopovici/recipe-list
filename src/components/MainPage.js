@@ -6,6 +6,7 @@ var MainTitle = require('./MainTitle');
 var AddRecipe = require('./AddRecipe');
 var RecipeList = require('./RecipeList');
 var RecipeDetail = require('./RecipeDetail');
+var RouteHandler = require('react-router').RouteHandler;
 
 var nav = [
         {key: 'recipes', title: 'All recipes', 'iconClassName': 'fa fa-cutlery'},
@@ -14,36 +15,7 @@ var nav = [
     ];
 
 var MainPage = React.createClass({
-
-	getInitialState: function() {
-		return {
-			route: window.location.hash.substr(1)
-		};
-	},
-	componentDidMount: function() {
-		var that = this;
-		window.addEventListener('hashchange', function() {
-			that.setState({
-				route: window.location.hash.substr(1)
-			});
-		});
-	},
 	render: function() {
-		var PageContent;
-		switch (this.state.route) {
-			case '/add':
-				PageContent = AddRecipe;
-				break;
-			case '/recipes':
-				PageContent = RecipeList;
-				break;
-			case '/recipes/:id':
-				PageContent = RecipeDetail;
-				break;
-			default:
-				PageContent = RecipeList;
-		}
-		
 		return (
 			<div>
 				<div id="sidenav-wrapper">
@@ -52,7 +24,7 @@ var MainPage = React.createClass({
 				<div id="right-page-content">
 					<MainTitle />
 					<div id="page-content">
-						<PageContent />
+						<RouteHandler />
 					</div>
 				</div>
 			</div>
