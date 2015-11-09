@@ -2,6 +2,12 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 
+textarea {
+	resize: none;
+	width: 430px;
+	height: 150px;
+}
+
 #website-header {
 	font-family: 'Bitter', serif;
 	font-size: 40px;
@@ -59,4 +65,23 @@ li.sidenav-selected {
     height: 100%;
     z-index: 999;
 	display: inline-block;
+}
+
+.form-element-group label {
+	width: 100%;
+	min-width: 400px;
+}
+
+.form-element-group span, .input-field span {
+	display: block;
+	padding-bottom: 0.5em;
+}
+
+label {
+	padding-bottom: 0.5em;
+}
+
+.form-element-group .input-field div {
+	display: inline-block;
+	width: 15%;
 }
