@@ -2,6 +2,7 @@
 
 var React = require('react');
 var Ingredient = require('./ingredient');
+var AddToShoppingListButton = require('./AddToShoppingListButton');
 
 var IngredientsList = React.createClass({
 	render: function(){
@@ -10,7 +11,11 @@ var IngredientsList = React.createClass({
 				<p className={"ingredients-title"}> Ingredients </p>
 				{
 					this.props.items.map(function(item){
-						return <Ingredient key={item.id} item={item} />;
+						return (
+							<div key={item.id} className="ingredient-item">
+								<Ingredient key={item.id} item={item} />
+								<AddToShoppingListButton key={item.id} ingredient={item}/>
+							</div>);
 					})
 				}
 			</div>

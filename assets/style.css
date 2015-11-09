@@ -42,6 +42,10 @@ body {
 	padding: 5px;
 }
 
+.ingredient-item a, .ingredient-item div {
+	display:inline-block;
+}
+
 ul.sidenav li {
     color: #FFF;
 	font-size: 18px;
