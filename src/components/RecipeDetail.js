@@ -3,7 +3,7 @@
 var React = require('react');
 var IngredientsList = require('./IngredientsList');
 var RecipeStore = require('../stores/RecipeStore');
-
+var MakeCakeButton = require('./MakeCakeButton');
 
 function getDetail(id){
 	return {recipe: RecipeStore.get(id)};
@@ -21,6 +21,7 @@ var RecipeDetail = React.createClass({
 		return (
 			<div>
 				<h3 className={"title"}>{this.state.recipe.name}</h3>
+				<MakeCakeButton ingredients={this.state.recipe.ingredients} />
 				<div className={"recipe-detail-body"}>
 					<IngredientsList items={this.state.recipe.ingredients} /> <br />
 					<p>{this.state.recipe.description}</p>

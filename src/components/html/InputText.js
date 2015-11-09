@@ -6,7 +6,7 @@ var InputText = React.createClass({
 	render: function() {
     return (
 			<div className="input-field">
-				<label for={this.props.id}>
+				<label htmlFor={this.props.id}>
 					{this.props.label}
 					<div>
 						<input type="text" placeholder={this.props.placeholderText} />

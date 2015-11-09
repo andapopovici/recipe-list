@@ -1,6 +1,6 @@
 var React = require('react');
 var Route = require('react-router').Route;
-var DefaultRoute = require('react-router').DefaultRoute;
+var IndexRoute = require('react-router').IndexRoute;
 // include all the components that are used in routes
 var AddRecipe = require('./components/AddRecipe');
 var MainPage = require('./components/MainPage');
@@ -9,11 +9,11 @@ var RecipeDetail = require('./components/RecipeDetail');
 
 
 var routes = (
-	<Route name="mainPage" path="/" handler={MainPage}>
-		<DefaultRoute handler={RecipeList} />
-		<Route name="recipes" handler={RecipeList} />
-		<Route name="add" handler={AddRecipe} />
-		<Route name="recipeDetail" path="/recipes/:id" handler={RecipeDetail} />
+	<Route path="/" component={MainPage}>
+		<IndexRoute component={RecipeList} />
+		<Route path="recipes" component={RecipeList} />
+		<Route path="add" component={AddRecipe} />
+		<Route path="/recipes/:id" component={RecipeDetail} />
 	</Route>
 );
 

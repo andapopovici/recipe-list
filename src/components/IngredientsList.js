@@ -14,7 +14,6 @@ var IngredientsList = React.createClass({
 						return (
 							<div key={item.id} className="ingredient-item">
 								<Ingredient key={item.id} item={item} />
-								<AddToShoppingListButton key={item.id} ingredient={item}/>
 							</div>);
 					})
 				}

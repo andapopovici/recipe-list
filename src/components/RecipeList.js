@@ -24,7 +24,7 @@ var RecipeList = React.createClass({
 				this.state.nodes.map(function(recipe) {
 					return (<div key={recipe.id}>
 								<h3 className="title">
-									<Link to="recipeDetail" params={{id: recipe.id}}>{recipe.name}</Link>
+									<Link to={`/recipes/${recipe.id}`}>{recipe.name}</Link>
 								</h3>
 								<img src={recipe.image} width="220" />
 							</div>);

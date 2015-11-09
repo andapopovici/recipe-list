@@ -20,10 +20,13 @@
     "jquery": "^2.1.4",
     "lodash": "^3.10.1",
     "object-assign": "^4.0.1",
-    "react": "^0.13.3",
-    "react-router": "^0.13.3",
+    "react": "^0.14.0",
+    "react-dom":"^0.14.0",
+    "react-bootstrap": "^0.27.3",
+    "react-router": "^1.0.0-rc4",
     "reactify": "^1.1.1",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "history":"^1.13.0"
   },
   "devDependencies": {
     "react-sidenav": "0.0.15"

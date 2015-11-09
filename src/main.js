@@ -1,13 +1,14 @@
 'use strict';
 
 var React = require('react');
-var Router = require('react-router');
-var routes = require('./routes');
+var ReactDOM = require('react-dom');
+var Router = require('react-router').Router;
+var Route = require('react-router').Route;
+
 var MainPage = require('./components/MainPage');
 var RecipeWebAPIUtils = require('./utils/RecipeWebAPIUtils');
+var routes = require('./routes');
 
 RecipeWebAPIUtils.getAllRecipes();
 
-Router.run(routes, function(Handler) {
-    React.render(<Handler />, document.getElementById('app'));
-});
+ReactDOM.render(<Router routes={routes}/>, document.getElementById('app'));

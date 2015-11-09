@@ -3,7 +3,7 @@
 var React = require('react');
 var SideNav = require('react-sidenav');
 var MainTitle = require('./MainTitle');
-var RouteHandler = require('react-router').RouteHandler;
+//var RouteHandler = require('react-router').RouteHandler;
 
 var nav = [
         {key: 'recipes', title: 'All recipes', 'iconClassName': 'fa fa-cutlery'},
@@ -21,7 +21,7 @@ var MainPage = React.createClass({
 				<div id="right-page-content">
 					<MainTitle />
 					<div id="page-content">
-						<RouteHandler />
+						{this.props.children}
 					</div>
 				</div>
 			</div>
