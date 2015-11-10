@@ -20,13 +20,15 @@ var RecipeDetail = React.createClass({
 	render: function(){
 		return (
 			<div>
-				<h3 className={"title"}>{this.state.recipe.name}</h3>
-				<MakeCakeButton ingredients={this.state.recipe.ingredients} />
-				<div className={"recipe-detail-body"}>
-					<IngredientsList items={this.state.recipe.ingredients} /> <br />
-					<p>{this.state.recipe.description}</p>
+				<div className="recipe-detail-wrapper">
+					<h3 className="title">{this.state.recipe.name}</h3>
+					<div className="recipe-detail-body">
+						<IngredientsList items={this.state.recipe.ingredients} /> <br />
+						<p>{this.state.recipe.description}</p>
+					</div>
+					<img src={this.state.recipe.image} className={"recipe-detail-img"}/>
 				</div>
-				<img src={this.state.recipe.image} className={"recipe-detail-img"}/>
+				<MakeCakeButton ingredients={this.state.recipe.ingredients} />
 			</div>
 		);
 	},

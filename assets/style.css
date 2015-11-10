@@ -48,8 +48,12 @@ textarea {
 	padding: 5px;
 }
 
-.ingredient-item a, .ingredient-item div {
-	display:inline-block;
+.make-cake-btn {
+	display:block;
+}
+
+.recipe-detail-wrapper {
+	overflow: auto;
 }
 
 ul.sidenav li {

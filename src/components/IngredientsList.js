@@ -12,7 +12,7 @@ var IngredientsList = React.createClass({
 				{
 					this.props.items.map(function(item){
 						return (
-							<div key={item.id} className="ingredient-item">
+							<div key={item.id}>
 								<Ingredient key={item.id} item={item} />
 							</div>);
 					})
