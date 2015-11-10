@@ -2,7 +2,6 @@
 
 var React = require('react');
 var Ingredient = require('./ingredient');
-var AddToShoppingListButton = require('./AddToShoppingListButton');
 
 var IngredientsList = React.createClass({
 	render: function(){

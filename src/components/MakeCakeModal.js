@@ -16,8 +16,14 @@ var MakeCakeModal = React.createClass({
 	},
 
 	componentWillReceiveProps:function(nextProps){
-		console.log(nextProps.ingredients);
 		this.setState({showModal: nextProps.show });
+	},
+
+	save: function(){
+		// TODO here save to shopping list
+		console.log('will save:');
+		console.log(this.refs.list.getShoppingList());
+		this.close();
 	},
 
 	render: function() {
@@ -28,7 +34,7 @@ var MakeCakeModal = React.createClass({
           		</Modal.Header>
 				<Modal.Body>
 				    <h4>Select the ingredients you need</h4>
-					<SelectableIngredientsList ingredients={this.props.ingredients} />
+					<SelectableIngredientsList ingredients={this.props.ingredients} ref="list" />
 				</Modal.Body>
 				<Modal.Footer>
 					<Button bsStyle="success" onClick={this.save}><i className="fa fa-shopping-cart"></i> Add to shopping list </Button>
