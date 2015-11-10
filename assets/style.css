@@ -56,6 +56,11 @@ textarea {
 	overflow: auto;
 }
 
+.modal-header {
+	background-color: #5f4e9a;
+	color: white;
+}
+
 ul.sidenav li {
     color: #FFF;
 	font-size: 18px;

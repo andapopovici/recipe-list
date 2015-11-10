@@ -12,7 +12,6 @@ var MakeCakeButton = React.createClass({
 		this.setState({
 			showModal: true
 		});
-		console.log('open ');
 	},
 	render: function() {
 		return (
@@ -24,7 +23,8 @@ var MakeCakeButton = React.createClass({
 					onClick={this.open}>
 					Make this cake!
 				</Button>
-				<MakeCakeModal show={this.state.showModal} />
+
+				<MakeCakeModal show={this.state.showModal} ingredients={this.props.ingredients}/>
 			</div>
 		);
 	}
