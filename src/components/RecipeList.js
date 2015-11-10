@@ -1,7 +1,7 @@
 'use strict';
 
 var React = require('react');
-var Link = require('react-router').Link;
+import Link from "react-router";
 var RecipeStore = require('../stores/RecipeStore');
 
 function getAllRecipeData() {
@@ -11,13 +11,13 @@ function getAllRecipeData() {
 }
 
 var RecipeList = React.createClass({
-	getInitialState: function(){
+	getInitialState: function() {
 		return getAllRecipeData();
 	},
 	componentDidMount: function() {
 		RecipeStore.addChangeListener(this._onChange);
 	},
-	render: function(){
+	render: function() {
 		return (
 			<div>
 			{
