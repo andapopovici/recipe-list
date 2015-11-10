@@ -1,8 +1,8 @@
 'use strict';
 
 var React = require('react');
-import Link from "react-router";
-var RecipeStore = require('../stores/RecipeStore');
+var Link = require("react-router").Link;
+const RecipeStore = require('../stores/RecipeStore');
 
 function getAllRecipeData() {
 	return {
@@ -10,18 +10,21 @@ function getAllRecipeData() {
 	};
 }
 
-var RecipeList = React.createClass({
-	getInitialState: function() {
-		return getAllRecipeData();
-	},
-	componentDidMount: function() {
+class RecipeList extends React.Component {
+	constructor() {
+		super();
+		this.state = getAllRecipeData();
+	}
+
+	componentDidMount() {
 		RecipeStore.addChangeListener(this._onChange);
-	},
-	render: function() {
+	}
+
+	render() {
 		return (
 			<div>
 			{
-				this.state.nodes.map(function(recipe) {
+				this.state.nodes.map((recipe) => {
 					return (<div key={recipe.id}>
 								<h3 className="title">
 									<Link to={`/recipes/${recipe.id}`}>{recipe.name}</Link>
@@ -32,10 +35,10 @@ var RecipeList = React.createClass({
 			}
 			</div>
 		);
-	},
-	_onChange: function() {
+	}
+	_onChange() {
 		this.setState(getAllRecipeData());
 	}
-});
+}
 
 module.exports = RecipeList;

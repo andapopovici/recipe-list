@@ -7,7 +7,6 @@ var browserify = require('browserify'); // Bundles JS
 var reactify = require('reactify');  // Transforms React JSX to JS
 var source = require('vinyl-source-stream'); // Use conventional text streams with Gulp
 var concat = require('gulp-concat'); //Concatenates files
-var lint = require('gulp-eslint'); //Lint JS files, including JSX
 var browserify = require('browserify');
 var babelify = require('babelify');
 
@@ -65,16 +64,10 @@ gulp.task('css', function() {
 		.pipe(connect.reload());
 });
 
-gulp.task('lint', function() {
-	return gulp.src(config.paths.js)
-		.pipe(lint({config: 'eslint.config.json'}))
-		.pipe(lint.format());
-});
-
 gulp.task('watch', function() {
 	gulp.watch(config.paths.css, ['css']);
 	gulp.watch(config.paths.html, ['html']);
-	gulp.watch(config.paths.js, ['js', 'lint']);
+	gulp.watch(config.paths.js, ['js']);
 });
 
-gulp.task('default', ['html', 'js', 'css', 'lint', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'css', 'open', 'watch']);
