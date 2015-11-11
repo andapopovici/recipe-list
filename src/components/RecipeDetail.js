@@ -54,7 +54,6 @@ var RecipeDetail = React.createClass({
 		this.setState(getDetail(recipeId));
 	},
 	_onShoppingListChange: function(){
-		console.log('shopping list changed! form recipe detail');
 		this.handleAlertShow();
 	},
 

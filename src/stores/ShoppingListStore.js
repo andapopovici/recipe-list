@@ -10,6 +10,10 @@ var _ = require('lodash');
 var shoppingList = [];
 
 var ShoppingListStore = assign({}, EventEmitter.prototype, {
+	get: function(){
+		return shoppingList;
+	},
+
 	addToList: function(items){
 		// union merges the 2 lists without having duplicates
 		if (items){

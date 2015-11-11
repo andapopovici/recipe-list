@@ -6,6 +6,7 @@ var AddRecipe = require('./components/AddRecipe');
 var MainPage = require('./components/MainPage');
 var RecipeList = require('./components/RecipeList');
 var RecipeDetail = require('./components/RecipeDetail');
+import ShoppingList from './components/ShoppingList';
 
 
 var routes = (
@@ -14,6 +15,7 @@ var routes = (
 		<Route path="recipes" component={RecipeList} />
 		<Route path="add" component={AddRecipe} />
 		<Route path="/recipes/:id" component={RecipeDetail} />
+		<Route path="shoppingList" component={ShoppingList} />
 	</Route>
 );
 
