@@ -2,25 +2,25 @@
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
+var Events = require('../constants/events');
+var Actions = require('../constants/actions');
 var assign = require('object-assign');
 var _ = require('lodash');
-
-var CHANGE_EVENT = 'change';
 
 var _nodes = {};
 
 var RecipeStore = assign({}, EventEmitter.prototype, {
 
   emitChange: function() {
-    this.emit(CHANGE_EVENT);
+    this.emit(Events.RECIPE_LIST_CHANGE);
   },
 
   addChangeListener: function(callback) {
-    this.on(CHANGE_EVENT, callback);
+    this.on(Events.RECIPE_LIST_CHANGE, callback);
   },
 
   removeChangeListener: function(callback){
-      this.removeListener(CHANGE_EVENT, callback);
+      this.removeListener(Events.RECIPE_LIST_CHANGE, callback);
   },
 
   get: function(id) {
@@ -40,13 +40,10 @@ RecipeStore.dispatchToken = AppDispatcher.register(function(payload) {
   var action = payload.action;
 
   switch(action.type) {
-
-    case "RECEIVE_RECIPES":
+    case Actions.RECEIVE_RECIPES:
       _nodes = action.rawNodes;
       RecipeStore.emitChange();
       break;
-    default:
-
   }
 
 });
