@@ -3,16 +3,19 @@
 var React = require('react');
 var Modal = require('react-bootstrap').Modal;
 var Button = require('react-bootstrap').Button;
+var ShoppingListActions = require('../actions/ShoppingListActionsCreator');
+var ModalActions = require('../actions/ModalActionsCreator');
 
 import SelectableIngredientsList from './SelectableIngredientsList';
 
 var MakeCakeModal = React.createClass({
+
 	getInitialState: function() {
-	    return {showModal: this.props.show };
+	    return {showModal: this.props.show};
 	},
 
 	close: function() {
-	    this.setState({ showModal: false });
+		ModalActions.close();
 	},
 
 	componentWillReceiveProps:function(nextProps){
@@ -20,9 +23,8 @@ var MakeCakeModal = React.createClass({
 	},
 
 	save: function(){
-		// TODO here save to shopping list
-		console.log('will save:');
-		console.log(this.refs.list.getShoppingList());
+		var ingredientsToAdd = this.refs.list.getShoppingList();
+		ShoppingListActions.addToList(ingredientsToAdd);
 		this.close();
 	},
 
