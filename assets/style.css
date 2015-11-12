@@ -18,6 +18,18 @@ textarea {
 	font-family: 'Bitter', serif;
 }
 
+.clear {
+	clear: both;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
 .purple {
 	color: #5f4e9a;
 }
@@ -120,7 +132,46 @@ label {
 	padding-bottom: 0.5em;
 }
 
+select {
+	padding: 0.2em;
+}
+
 .form-element-group .input-field div {
 	display: inline-block;
 	width: 15%;
+}
+
+.recipe-list-item {
+	border-top: 1px solid #ccc;
+	width: 100%;
+	padding: 1.5em 0 1.5em 0;
+}
+
+.recipe-list-item:first-child {
+	border-top: none;
+}
+
+.recipe-list-item h3 {
+	margin: 0;
+	padding: 0;
+}
+
+.recipe-list-item-main {
+	width: 75%;
+}
+
+.recipe-list-item article {
+	display: block;
+	width: 90%;
+	font-style: italic;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding: 1em 0;
+	font-size: 13px;
+}
+
+.recipe-list-item img {
+	width: 75px;
+	float: right;
 }

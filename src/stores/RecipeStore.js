@@ -11,43 +11,50 @@ var _nodes = {};
 
 var RecipeStore = assign({}, EventEmitter.prototype, {
 
-  emitChange: function() {
-    this.emit(CHANGE_EVENT);
-  },
+    emitChange: function () {
+        this.emit(CHANGE_EVENT);
+    },
 
-  addChangeListener: function(callback) {
-    this.on(CHANGE_EVENT, callback);
-  },
+    addChangeListener: function (callback) {
+        this.on(CHANGE_EVENT, callback);
+    },
 
-  removeChangeListener: function(callback){
-      this.removeListener(CHANGE_EVENT, callback);
-  },
+    removeChangeListener: function (callback) {
+        this.removeListener(CHANGE_EVENT, callback);
+    },
 
-  get: function(id) {
-        var result = _.find(_nodes, function(node){
-                        return node.id === +id;
-                    });
+    get: function (id) {
+        var result = _.find(_nodes, function (node) {
+            return node.id === +id;
+        });
 
         return result;
-  },
+    },
 
-  getAll: function() {
-    return _nodes;
-  }
+    getByType: function (type) {
+        var results = _.filter(_nodes, function (node) {
+            return node.type === type;
+        });
+        return results;
+    },
+
+    getAll: function () {
+        return _nodes;
+    }
 });
 
-RecipeStore.dispatchToken = AppDispatcher.register(function(payload) {
-  var action = payload.action;
+RecipeStore.dispatchToken = AppDispatcher.register(function (payload) {
+    var action = payload.action;
 
-  switch(action.type) {
+    switch (action.type) {
 
-    case "RECEIVE_RECIPES":
-      _nodes = action.rawNodes;
-      RecipeStore.emitChange();
-      break;
-    default:
+        case "RECEIVE_RECIPES":
+            _nodes = action.rawNodes;
+            RecipeStore.emitChange();
+            break;
+        default:
 
-  }
+    }
 
 });
 

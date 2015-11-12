@@ -8,6 +8,13 @@ var RecipeActions = {
 			type: "RECEIVE_RECIPES",
 			rawNodes: nodes
 		});
+	},
+
+	typeChanged: function(newValue){
+		AppDispatcher.handleViewAction({
+			type: 'RECIPE_TYPE_DROPDOWN_CHANGED',
+			value: newValue
+		})
 	}
 };
 
