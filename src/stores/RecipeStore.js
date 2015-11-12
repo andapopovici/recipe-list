@@ -11,19 +11,7 @@ var _nodes = {};
 
 var RecipeStore = assign({}, EventEmitter.prototype, {
 
-<<<<<<< HEAD
-    emitChange: function () {
-        this.emit(CHANGE_EVENT);
-    },
 
-    addChangeListener: function (callback) {
-        this.on(CHANGE_EVENT, callback);
-    },
-
-    removeChangeListener: function (callback) {
-        this.removeListener(CHANGE_EVENT, callback);
-    },
-=======
   emitChange: function() {
     this.emit(Events.RECIPE_LIST_CHANGE);
   },
@@ -35,7 +23,6 @@ var RecipeStore = assign({}, EventEmitter.prototype, {
   removeChangeListener: function(callback){
       this.removeListener(Events.RECIPE_LIST_CHANGE, callback);
   },
->>>>>>> 20cc4b3ae403cb433e861daf949a4b65209f2ba9
 
     get: function (id) {
         var result = _.find(_nodes, function (node) {
@@ -60,24 +47,12 @@ var RecipeStore = assign({}, EventEmitter.prototype, {
 RecipeStore.dispatchToken = AppDispatcher.register(function (payload) {
     var action = payload.action;
 
-<<<<<<< HEAD
-    switch (action.type) {
-
-        case "RECEIVE_RECIPES":
-            _nodes = action.rawNodes;
-            RecipeStore.emitChange();
-            break;
-        default:
-
-    }
-=======
   switch(action.type) {
     case Actions.RECEIVE_RECIPES:
       _nodes = action.rawNodes;
       RecipeStore.emitChange();
       break;
   }
->>>>>>> 20cc4b3ae403cb433e861daf949a4b65209f2ba9
 
 });
 
